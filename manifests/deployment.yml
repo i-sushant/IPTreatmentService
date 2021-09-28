@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: iptreatmentservice 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iptreatmentservice
+  template:
+    metadata:
+      labels:
+        app: iptreatmentservice 
+    spec:
+      containers:
+        - name: iptreatmentservice 
+          image: ctstrainingacr.azurecr.io/iptreatmentservice
+          ports:
+          - containerPort: 80
